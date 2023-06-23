@@ -1,0 +1,63 @@
+<div class="container">
+  <h1>Displaying Customer Details</h1>
+  <div class="cards-container" >
+    <div class="cards-form">
+      <form #form="ngForm" (ngSubmit)="onSubmit()" >
+        <div class="form-group">
+          <label for="cardName">Card Name</label>
+          <input type="text" name="cardName"  [(ngModel)]="cards.cardholderName">
+        </div>
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" name="cardNumber"  [(ngModel)]="cards.cardholderNumber">
+        </div>
+        <div class="form-group form-group-inline">
+          <div>
+            <label for="cvc">CVC</label>
+            <input type="text" name="cvc"  [(ngModel)]="cards.cVV">
+          </div>
+          <div>
+            <label for="expiryMonth">Expiry Month</label>
+            <input type="text" name="expiryMonth"  [(ngModel)]="cards.expiryMonth" >
+          </div>
+          <div>
+            <label for="expiryYear">Expiry Year</label>
+            <input type="text" name="expiryYear"  [(ngModel)]="cards.expiryYear">
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <button>Save</button>
+        </div>
+      </form>
+    </div>
+    <div class="cards-grid">
+
+
+
+      <div (click)="PopulateCard(cr)" class="card-row" *ngFor="let cr of card">
+        <div class="card-row-details">
+          <span>{{cr.cardholderName}}</span>
+          <span>{{cr.cardholderNumber}}</span>
+        </div>
+        <div class="card-row-action">
+          <a (click)="deletecard(cr.id)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    
+
+
+
+
+      
+      
+    
+    
+    </div>
+  </div>
+</div>
